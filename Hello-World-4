@@ -42,11 +42,14 @@ LicenceNotice("2018 Seth1024T (https://github.com/Seth1024T)")
 # You can speed up your programming by creating large libraries of modules that contain useful, and often generalized 
 # functions, procedures, and objects. The examples here show you how to do this.
 
-display(decoration_funct1) 
-# people call this bunch of words a string 
-puts "Hello World." 
-blankline 
-display("---------------------------------") 
-display("Thank you for using this program.") 
-display("Program closing... bye.") 
-display(decoration_funct1)
+screenwidth=107
+display(decoration_patterns("-  -", 8, "", screenwidth))
+blankline
+# people call this bunch of words a string
+puts "Hello World."
+blankline
+display(decoration_multisymbols("- ",16, screenwidth))
+display("Thank you for using this program.")
+display("Program closing... bye.")
+display(decoration_singlesymbols("-",33, screenwidth))
+display(decoration_patterns("1234567890",3,"123", screenwidth))

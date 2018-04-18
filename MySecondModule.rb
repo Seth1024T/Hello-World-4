@@ -109,6 +109,12 @@ how long your character print lines are while you are programming code.
       puts "1234567890"*amult
    end
    
+   # test_screen_character_width prints out a pattern like this: "1234567890"
+   # When the screen is measured in a manual way the programmer taps the
+   # keyboard to make a repeating patterns of "1234567890," so this program is
+   # built to mimic that. Somtimes this sort of programming is called backward
+   # compatability. It also allows old conventions to remain in place, and for
+   # things like legacy programs (very old code) to continue working.
    def test_screen_character_width(amult=80, spacer_character= "--")
       screen_len=spacer_character+amult.to_s # convet to string
       cl=screen_len.length                   # get string length
@@ -125,12 +131,75 @@ how long your character print lines are while you are programming code.
             if ((i+1)==10)
                print "0"
             else
-               print i
+               print i+1
             end
          end
       end
       puts screen_len
    end
+   
+   # General Code To Make Text Patterns
+   # The above screen measures might help in deiding how long a decoration string should
+   # be.
+   
+   def maxsymbols(a_symbol="- ", how_many=33, maxlen=80)
+      smblen=a_symbol.length
+      strlen=smblen*how_many
+      if (strlen>maxlen)
+         hmy=(80/smblen).to_i #just in case float results form division.
+      else
+         hmy=how_many
+      end
+      return (hmy)
+   end
+   
+   def decoration_singlesymbols(a_symbol="*", how_many=33)
+      how_many=maxsymbols(a_symbol, how_many, maxlen)
+      if (a_symbol.length>1)
+         first_symbol=a_symbol[0]
+         new_pattern=first_symbol*how_many
+      elsif (a_symbol.length==1)
+         new_pattern=a_symbol*how_many
+      else
+         a_symbol="*"
+         new_pattern=a_symbol*how_many
+      end
+      return (new_pattern)
+   end
+   
+   def decoration_multisymbols(a_symbol="- ", how_many=11, maxlen=80)
+      how_many=maxsymbols(a_symbol, how_many, maxlen)
+      if (a_symbol.length>1)
+         first_symbol=a_symbol[0]
+         new_pattern=a_symbol*how_many+first_symbol
+      elsif (a_symbol.length==1)
+         new_pattern=a_symbol*how_many
+      else
+         a_symbol="*"
+         new_pattern=a_symbol*how_many
+      end
+      return (new_pattern)
+   end
+   
+   def decoration_patterns(a_symbol="1234567890", how_many=3, end_symbol="123", maxlen=80)
+      how_many=maxsymbols(a_symbol, how_many, (maxlen-end_symbol.length))
+      if (a_symbol.length>1)
+         new_pattern=a_symbol*how_many+end_symbol
+      else
+         if (end_symbol.length>1)
+            a_symbol=end_symbol
+            new_pattern=a_symbol*how_many+end_symbol
+         elsif (end_symbol.length==1)
+            a_symbol=end_symbol*2
+            new_pattern=a_symbol*how_many+end_symbol
+         else
+            a_symbol="**"
+            new_pattern=a_symbol*how_many+end_symbol
+         end
+      end
+      return (new_pattern)
+   end
+   
    # 1234567-10-2345678901234567-20-234567-30-234567-40-234567-50-234567-60-234567-50-234
    # 123456789012345678901234567890123456789012345678901234567890123456789012345678901234
    

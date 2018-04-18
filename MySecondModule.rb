@@ -141,12 +141,23 @@ how long your character print lines are while you are programming code.
    # General Code To Make Text Patterns
    # The above screen measures might help in deiding how long a decoration string should
    # be.
+   #
+   # While there is a lot of new code here, there's not a great deal chages in the main
+   # program.
+   # 
+   # One thing to condier with making code is who it's for. The below functions are robust
+   # to some degree, as they are built for the programmer, but more could be added to them.
+   #
+   # By robust code, the programmer is refering to the idea that despite some mistakes a
+   # programmer might make, the functions should still work. There is a trade off in time
+   # versus productivity, and you may have to make such decisions for each section of code
+   # you make.
    
-   def maxsymbols(a_symbol="- ", how_many=33, maxlen=80)
+   def maxsymbols(a_symbol="- ", how_many=33, screenlen=80)
       smblen=a_symbol.length
       strlen=smblen*how_many
       if (strlen>maxlen)
-         hmy=(80/smblen).to_i #just in case float results form division.
+         hmy=(80/smblen).to_i #just in case float results from the division.
       else
          hmy=how_many
       end
@@ -154,7 +165,7 @@ how long your character print lines are while you are programming code.
    end
    
    def decoration_singlesymbols(a_symbol="*", how_many=33)
-      how_many=maxsymbols(a_symbol, how_many, maxlen)
+      how_many=maxsymbols(a_symbol, how_many, screenlen)
       if (a_symbol.length>1)
          first_symbol=a_symbol[0]
          new_pattern=first_symbol*how_many
@@ -167,8 +178,8 @@ how long your character print lines are while you are programming code.
       return (new_pattern)
    end
    
-   def decoration_multisymbols(a_symbol="- ", how_many=11, maxlen=80)
-      how_many=maxsymbols(a_symbol, how_many, maxlen)
+   def decoration_multisymbols(a_symbol="- ", how_many=11, screenlen=80)
+      how_many=maxsymbols(a_symbol, how_many, screenlen)
       if (a_symbol.length>1)
          first_symbol=a_symbol[0]
          new_pattern=a_symbol*how_many+first_symbol

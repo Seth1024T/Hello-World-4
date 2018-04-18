@@ -48,6 +48,13 @@ knowledge. Knowledge not only of low level programming, but quirks about ruby, s
 as what exactly is an integer representation in ruby--and that might surprise you--
 might be required for low level programming. but that discussion is outside the 
 scope of this section, and discussion.
+
+Since this program uses a Ruby Command Prompt Window. The below patterns help measure
+how long your character print lines are while you are programming code.
+
+# 1234567-10-2345678901234567-20-234567-30-234567-40-234567-50-234567-60-234567-50-234
+# 123456789012345678901234567890123456789012345678901234567890123456789012345678901234
+
 =end
    
    def LicenceNotice(yr_name_link="2018 Seth1024T (https://github.com/Seth1024T)")
@@ -71,4 +78,60 @@ scope of this section, and discussion.
    def decoration_funct1
       return("*********************************")
    end
+   #
+   # GENERAL USE FUNCTIONS (NOT SPECIFIC TO ONE PROGRAM)
+   #
+   # Screen Width Measure (one of many posssible ways to do this)
+   # These functions are not used here directly, they can be put into small seperate
+   # programs though. Modules are generaly designed for one specific program.
+   #
+   # Code To Measure The Ruby Command Prompt Window Width
+   
+   def traditional_screen_length(screenwidth=80)
+   # My tests indicate the a full screen can go up to 230 on one screen...
+   # A constant has a Global Span, so ScreenWithConstant=230 could be put at the top of
+   # the program, and alter all fuctions for example that use 
+   # traditional_screen_length(ScreenWithConstant). Classes (not covered yet) can also
+   # be a handy way to do this without the use of a global constant.
+      return (screenwidth) #The new window is expandable to a full screen
+   end
+   
+   def larger_then_traditional_screen_width(string_length)
+      if (string_length>traditional_screen_length)
+         val=true
+      else
+         val=false
+      end
+      return (val)
+   end
+   
+   def test_screen_width_in_multiples_of_ten(amult=8)
+      puts "1234567890"*amult
+   end
+   
+   def test_screen_character_width(amult=80, spacer_character= "--")
+      screen_len=spacer_character+amult.to_s # convet to string
+      cl=screen_len.length                   # get string length
+      decoration_length=amult-cl
+      for i in 0..(decoration_length-1)
+         if i>=10
+            rem=i%10 # the modulo operator returns the remainder of a division
+            if ((rem+1)==10)
+               print "0"
+            else
+               print rem+1
+            end
+         else   
+            if ((i+1)==10)
+               print "0"
+            else
+               print i
+            end
+         end
+      end
+      puts screen_len
+   end
+   # 1234567-10-2345678901234567-20-234567-30-234567-40-234567-50-234567-60-234567-50-234
+   # 123456789012345678901234567890123456789012345678901234567890123456789012345678901234
+   
 end

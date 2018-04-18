@@ -17,7 +17,7 @@ In the first Hello World program we made some early use of functions. Here we wi
 how we can put those functions into modules, and eventually into seperate files (that contain
 modules).
 
-Hello Word 4 further adds to, and modifies Hello World 3: https://github.com/Seth1024T/Hello-World-3
+Hello World 4 further adds to, and modifies Hello World 3: https://github.com/Seth1024T/Hello-World-3
 
 In Hello World 4 we hide information in functions, and put those functions into other functions. 
 This may seem silly at first, but it shows some more advance concepts in how to make libaries,

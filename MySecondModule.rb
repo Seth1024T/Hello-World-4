@@ -58,6 +58,8 @@ how long your character print lines are while you are programming code.
 =end
    
    def LicenceNotice(yr_name_link="2018 Seth1024T (https://github.com/Seth1024T)")
+      puts ""
+      puts "***************************************" 
       puts "Copyright (C) #{yr_name_link})" 
       puts "This Program uses a GNU GPL V3 licence or later. Since a " 
       puts "Ruby program must have the source code to run in most cases,"
@@ -66,7 +68,9 @@ how long your character print lines are while you are programming code.
       puts "http://www.gnu.org/licenses/gpl.html for more specific details."
       puts "Details about the licence that this program uses, can also be"
       puts "found at the github URL (web address) mentioned above."
-      puts "***************************************" 
+      puts "***************************************"
+      puts ""
+      puts ""
    end
    def blankline 
       puts " " 
@@ -156,7 +160,7 @@ how long your character print lines are while you are programming code.
    def maxsymbols(a_symbol="- ", how_many=33, screenlen=80)
       smblen=a_symbol.length
       strlen=smblen*how_many
-      if (strlen>maxlen)
+      if (strlen>screenlen)
          hmy=(80/smblen).to_i #just in case float results from the division.
       else
          hmy=how_many
@@ -164,7 +168,7 @@ how long your character print lines are while you are programming code.
       return (hmy)
    end
    
-   def decoration_singlesymbols(a_symbol="*", how_many=33)
+   def decoration_singlesymbols(a_symbol="*", how_many=33, screenlen=80)
       how_many=maxsymbols(a_symbol, how_many, screenlen)
       if (a_symbol.length>1)
          first_symbol=a_symbol[0]

@@ -25,23 +25,23 @@ If not, see http://www.gnu.org/licenses/.
 # suggests you include code to let users view the relevant parts of 
 # the GPL licence: http://www.gnu.org/licenses/gpl.html; 
 # see section 17. puts "***************************************"
-​
+
 =begin
 Modules are generally not stand alone programs, they are often included in programs
 to speed up the rate of code generation. They are often referred to as libraries of 
 re-usable, often generalized, and useful code.
-​
+
 in general modules should not include variables, arrays, or instances of objects.
 You can put variables into functions (as is done here) to get around that problem.
-​
+
 You can also use objects to do a similar thing for arrays, and variables. Examples
 of useful constants include ones that are used for conversions, or constants that 
 are used in science calculations for example.
-​
+
 Ruby lets programmers do many things, and it is a matter of style on what you chose
 to use. Here modules are for general use (in most cases) and often contain functions, 
 procedures, and objects.
-​
+
 People that do very low level programming may like to keep variables in arrays that 
 are in turn stored in modules, but that level of programming can require specialist 
 knowledge. Knowledge not only of low level programming, but quirks about ruby, such 

@@ -1,5 +1,8 @@
 # Hello-World-4
-A simple program that says hello world, but with some advance features.
+A simple program that says hello world, but with some advance features. In Hello World 4 we
+make the module more general, and use functions to hide information to keep programs, and
+the parts short, easy to read, understandable, and easier to maintain. It's possible that
+the module is now more useful to any future programs we might want to make.
 
 Hello World and modules
 

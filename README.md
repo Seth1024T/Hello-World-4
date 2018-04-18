@@ -13,15 +13,17 @@ understand what a part of the program does. Such short units are often procedure
 or objects in OOP (Object Orientated Programming). Small amounts of code units may also help you
 understand what parts of your program do.
 
+In the first Hello World program we made some early use of functions. Here we will investigate
+how we can put those functions into modules, and eventually into seperate files (that contain
+modules).
+
+Hello Word 4 further adds to, and modifies Hello World 3: https://github.com/Seth1024T/Hello-World-3
+
 In Hello World 4 we hide information in functions, and put those functions into other functions. 
 This may seem silly at first, but it shows some more advance concepts in how to make libaries,
 and how to make useful easy to read code that can be used by many different programs. It's easy
 to make programs of several hundreds of lines, but you should try and avoid this, as such
 programs can be hard to read, understand, and maintain.
-
-In the first Hello World program we made some early use of functions. Here we will investigate
-how we can put those functions into modules, and eventually into seperate files (that contain
-modules).
 
 The advantage of having a seperate file that contains modules, is that you can connect those
 seperate files to a new prgram you are making, and speed up the time it takes to make a program.
